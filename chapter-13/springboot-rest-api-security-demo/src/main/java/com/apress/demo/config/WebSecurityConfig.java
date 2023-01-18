@@ -36,6 +36,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter
     @Autowired
     private RestAuthenticationSuccessHandler authenticationSuccessHandler;
     
+    //password = abcd, encoded form = asdfasdasfsdafa
     @Bean
     public PasswordEncoder passwordEncoder() {
         return new BCryptPasswordEncoder();
@@ -55,7 +56,13 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter
     protected void configure(HttpSecurity http) throws Exception {
     	http
     		.csrf().disable()
-	    	
+	   
+    		// To login, POST form with "username" and "password" to http://localhost:8080/login
+    		//	admin@gmail.com/admin (or) siva@gmail.com/siva (or) user@gmail.com/user
+    		// Copy the response set-header value that starts with JSessionId
+    		// GET http://localhost:8080/api/posts
+    		// Include the copied Jsession id as a cookie in the above request 
+    		
 	        .authorizeRequests()
 		        .antMatchers("/","/login","/contact").permitAll()
 		        .antMatchers("/api/admin/**").hasRole("ADMIN")

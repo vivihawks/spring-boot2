@@ -6,14 +6,18 @@ package com.apress.demo.config;
 import javax.servlet.Filter;
 
 import org.springframework.orm.jpa.support.OpenEntityManagerInViewFilter;
+import org.springframework.web.WebApplicationInitializer;
 import org.springframework.web.servlet.support.AbstractAnnotationConfigDispatcherServletInitializer;
 
 /**
  * @author Siva
  *
  */
-public class SpringWebAppInitializer extends AbstractAnnotationConfigDispatcherServletInitializer
+public class SpringWebAppInitializer
+					//implements WebApplicationInitializer
+					extends AbstractAnnotationConfigDispatcherServletInitializer
 {
+	
 	@Override
 	protected Class<?>[] getRootConfigClasses()
 	{

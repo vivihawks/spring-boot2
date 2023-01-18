@@ -11,7 +11,9 @@
 <div>
 <div layout:fragment="content">
     <h3>User Registration Form</h3>
-
+    <!--
+    	<form:form action="/registration" model="user"> 
+     -->
     <form th:action="@{/registration}" th:object="${user}" method="post">
     
         <p th:if="${#fields.hasErrors('global')}" th:errors="*{global}" th:class="text-red">Incorrect data</p>

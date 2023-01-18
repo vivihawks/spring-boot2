@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 /**
  * @author Siva
@@ -19,9 +20,9 @@ public class HomeController {
 	private String test;
 
 	@RequestMapping("/home")
-//	@ResponseBody
+	@ResponseBody
 	public String home(Model model) {
-//		return "This is response body";
-		return "index.html";
+		return "This is response body";
+		//return "index.html";
 	}
 }

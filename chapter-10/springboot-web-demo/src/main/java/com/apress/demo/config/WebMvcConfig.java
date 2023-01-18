@@ -71,6 +71,7 @@ public class WebMvcConfig implements WebMvcConfigurer
 		registration.setName("javamelodyFilter");
 		registration.setAsyncSupported(true);
 		registration.setDispatcherTypes(DispatcherType.REQUEST, DispatcherType.ASYNC);
+		System.err.println("%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%");
 		return registration;
 	}
 

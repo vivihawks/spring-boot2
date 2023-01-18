@@ -39,6 +39,7 @@ public class UserServiceTest
 	
 	@Test
 	public void createUser() {
+		
 		User user = new User(0, "Siva", "siva@gmail.com");
 		User savedUser = userRepository.create(user);
 		User newUser = userRepository.findUserById(savedUser.getId());
